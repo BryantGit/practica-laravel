@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\PagesController;
+use App\Http\Controllers\ProductoController;
+use App\Models\Producto;
+use GuzzleHttp\Handler\Proxy;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,9 +17,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/curso-semestral',[PagesController::class,'semestral'])->name('semestral');
+Route::get('/curso-semi',[PagesController::class,'semi'])->name('semi');
+Route::get('/curso-anual',[PagesController::class,'anual'])->name('anual');
+
 
 Route::middleware([
     'auth:sanctum',
@@ -26,3 +31,5 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+route::get('/Producto',[ProductoController::class,'saludo']);
