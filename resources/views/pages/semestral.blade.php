@@ -1,7 +1,8 @@
 @extends('layouts.plantilla')
 @section('contenido')
 <section class="form">
-    <form action="{{route(semestral_post)}}" method="post"name="form__d_p_f" id="form__d_p_f" class="form__d_p_f">
+    <form action="{{route('semestral_post')}}" method="post" name="form__d_p_f" id="form__d_p_f" class="form__d_p_f">
+        @csrf
         @include('includes.forms.registroForm')
         @include('includes.botoms.btnEnvioFormulario')
     </form>

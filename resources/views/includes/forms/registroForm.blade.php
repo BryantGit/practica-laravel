@@ -30,13 +30,17 @@
             <div class="form__50">
                 <label for="fname" class="form__label">¿A qué universidad deseas ingresar?</label><br>
                 <div class="form__selector">
-                    <select type="search" class="form__input" name="form_uni" id="form-uni"   min="6" max="100" >
+                    <select type="search" class="form__input" name="form_uni" id="form-uni" min="6" max="100" >
                         <option>---Selecciona---</option>
-                        <option value="1">UNAM</option>
+                        @foreach ($universidades as $universidad)
+                            <option value="{{$universidad->id}}">{{$universidad->nombre}}</option>
+                        @endforeach
+                    </select>
+                        {{-- <option value="1">UNAM</option>
                         <option value="2">IPN</option>
                         <option value="3">UANL</option>
                         <option value="4">UDEG</option>
-                        <option value="5">UASLP</option>
+                        <option value="5">UASLP</option> --}}
                     </select>
                 </div>
             </div>
